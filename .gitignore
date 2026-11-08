@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.env
+.venv/
+downloads/
+*.pdf
+*.pdf.part
+data/demo.json

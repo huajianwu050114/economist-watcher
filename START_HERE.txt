@@ -1,0 +1,18 @@
+Economist Watcher — 3 steps
+
+1. Extract economist_watcher.zip.
+2. On Windows, install Git + GitHub CLI if needed:
+     winget install --id Git.Git --exact
+     winget install --id GitHub.cli --exact
+   Reopen PowerShell in the extracted folder.
+3. Run:
+     powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy.ps1
+
+Then open the GitHub Actions link printed by the script.
+Select Economist Watcher -> Run workflow to test immediately.
+
+Schedule: Wednesday & Sunday at 09:37 Asia/Shanghai.
+Currently: new-issue monitoring + dedup + GitHub Issues notifications.
+Actual unattended PDF retrieval requires authorized, working HTTPS PDF URLs;
+Magazine Lib's dynamic button is NOT verified as an automatic PDF download endpoint.
+See README.md for details (Chinese).

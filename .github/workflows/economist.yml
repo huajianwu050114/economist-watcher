@@ -1,0 +1,70 @@
+name: Economist Watcher
+
+on:
+  schedule:
+    # Beijing time / Asia-Shanghai: Wed & Sun, 09:37
+    - cron: '37 9 * * 3,0'
+      timezone: 'Asia/Shanghai'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: economist-watcher
+      cancel-in-progress: false
+    steps:
+      - name: Checkout default branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run unit tests (offline)
+        run: python -m unittest discover -s tests -v
+
+      - name: Detect new issues and retrieve authorized PDFs
+        id: scan
+        env:
+          EDITION: asia
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PDF_URL_MAP_JSON: ${{ secrets.PDF_URL_MAP_JSON }}
+          PDF_URL_TEMPLATE: ${{ secrets.PDF_URL_TEMPLATE }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: python monitor.py
+
+      - name: Preserve PDFs as temporary Actions artifacts, if any
+        if: always() && hashFiles('downloads/*.pdf') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: economist-authorized-pdfs-${{ github.run_id }}
+          path: downloads/*.pdf
+          retention-days: 30
+
+      - name: Persist deduplication state in repository
+        if: always()
+        run: |
+          if test ! -f data/seen.json; then
+            echo 'No state file to persist.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/seen.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: update Economist issue monitoring state'
+            git push
+          else
+            echo 'No changes; nothing to commit.'
+          fi
