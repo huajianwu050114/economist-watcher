@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "seen": {
+    "2026-09-26:asia": {
+      "date": "2026-09-26",
+      "edition": "asia",
+      "first_seen_at": "2026-11-08T13:39:02+00:00",
+      "initial_baseline": true,
+      "link": "https://magazinelib.com/all/the-economist-asia-edition-26-september-2026/",
+      "notified_github_issue": null,
+      "notified_telegram": false,
+      "pdf_status": "unconfigured",
+      "title": "The Economist Asia Edition – 26 September 2026"
+    },
+    "2026-10-03:asia": {
+      "date": "2026-10-03",
+      "edition": "asia",
+      "first_seen_at": "2026-11-08T13:39:02+00:00",
+      "initial_baseline": true,
+      "link": "https://magazinelib.com/all/the-economist-asia-edition-3-october-2026/",
+      "notified_github_issue": null,
+      "notified_telegram": false,
+      "pdf_status": "unconfigured",
+      "title": "The Economist Asia Edition – 3 October 2026"
+    },
+    "2026-10-10:asia": {
+      "date": "2026-10-10",
+      "edition": "asia",
+      "first_seen_at": "2026-11-08T13:39:02+00:00",
+      "initial_baseline": true,
+      "link": "https://magazinelib.com/all/the-economist-asia-edition-10-october-2026/",
+      "notified_github_issue": null,
+      "notified_telegram": false,
+      "pdf_status": "unconfigured",
+      "title": "The Economist Asia Edition – 10 October 2026"
+    },
+    "2026-10-17:asia": {
+      "date": "2026-10-17",
+      "edition": "asia",
+      "first_seen_at": "2026-11-08T13:39:02+00:00",
+      "initial_baseline": true,
+      "link": "https://magazinelib.com/all/the-economist-asia-edition-17-october-2026/",
+      "notified_github_issue": null,
+      "notified_telegram": false,
+      "pdf_status": "unconfigured",
+      "title": "The Economist Asia Edition – 17 October 2026"
+    },
+    "2026-10-24:asia": {
+      "date": "2026-10-24",
+      "edition": "asia",
+      "first_seen_at": "2026-11-08T13:39:02+00:00",
+      "initial_baseline": false,
+      "link": "https://magazinelib.com/all/the-economist-asia-edition-24-october-2026/",
+      "notified_github_issue": 1,
+      "notified_telegram": false,
+      "pdf_status": "unconfigured",
+      "title": "The Economist Asia Edition – 24 October 2026"
+    }
+  }
+}
