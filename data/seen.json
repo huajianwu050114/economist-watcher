@@ -55,6 +55,17 @@
       "notified_telegram": false,
       "pdf_status": "unconfigured",
       "title": "The Economist Asia Edition – 24 October 2026"
+    },
+    "2026-10-31:asia": {
+      "date": "2026-10-31",
+      "edition": "asia",
+      "first_seen_at": "2026-11-11T08:18:41+00:00",
+      "initial_baseline": false,
+      "link": "https://magazinelib.com/all/the-economist-asia-edition-31-october-2026/",
+      "notified_github_issue": 2,
+      "notified_telegram": false,
+      "pdf_status": "unconfigured",
+      "title": "The Economist Asia Edition – 31 October 2026"
     }
   }
 }
