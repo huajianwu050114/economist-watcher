@@ -77,6 +77,17 @@
       "notified_telegram": false,
       "pdf_status": "unconfigured",
       "title": "The Economist Asia Edition – 7 November 2026"
+    },
+    "2026-11-14:asia": {
+      "date": "2026-11-14",
+      "edition": "asia",
+      "first_seen_at": "2026-11-22T08:44:35+00:00",
+      "initial_baseline": false,
+      "link": "https://magazinelib.com/all/the-economist-asia-edition-14-november-2026/",
+      "notified_github_issue": 4,
+      "notified_telegram": false,
+      "pdf_status": "unconfigured",
+      "title": "The Economist Asia Edition – 14 November 2026"
     }
   }
 }
